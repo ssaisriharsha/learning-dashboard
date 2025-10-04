@@ -139,6 +139,18 @@ const Header = () => {
     );
 };
 
+const Footer = () => (
+    <footer className="mt-12 py-6 border-t border-gray-200 dark:border-slate-800">
+        <div className="container mx-auto px-6 flex justify-between items-center text-sm text-gray-600 dark:text-gray-400">
+            <p>&copy; 2025 Learnify. All rights reserved.</p>
+            <div className="flex space-x-6">
+                <a href="#" className="hover:text-blue-500 dark:hover:text-blue-400 transition-colors">About Us</a>
+                <a href="#" className="hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+);
+
 // --- NEW Radial Chart Component ---
 const weeklyGoal = 300; // 300 minutes for the week
 const currentProgress = 240; // 240 minutes completed
@@ -364,7 +376,7 @@ export default function App(): JSX.Element {
   };
 
   return (
-    <div className="min-h-screen bg-blue-50 dark:bg-slate-900 font-sans transition-colors duration-300">
+    <div className="min-h-screen bg-blue-50 dark:bg-slate-900 font-sans transition-colors duration-300 flex flex-col">
         <style>{`
             @keyframes trophy-pop {
                 0% { transform: scale(0) rotate(-30deg); opacity: 0; }
@@ -383,11 +395,11 @@ export default function App(): JSX.Element {
             }
         `}</style>
       <Header />
-      <main className="container mx-auto px-6 py-8">
+      <main className="container mx-auto px-6 py-8 flex-grow">
         
         {/* Welcome Section */}
         <section className="mb-12">
-            <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-200 mb-2">Welcome Back, Alex!</h1>
+            <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-200 mb-2">Welcome Back, User!</h1>
             <p className="text-gray-600 dark:text-gray-400 text-lg">Ready for a new adventure in learning?</p>
         </section>
 
@@ -420,6 +432,8 @@ export default function App(): JSX.Element {
           </div>
         </div>
       </main>
+
+      <Footer />
 
       {isModalOpen && (
           <TopicModal 
